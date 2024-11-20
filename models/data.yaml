@@ -1,0 +1,18 @@
+names:
+- banana-bag
+- banana
+- blackberries
+- raspberry
+- lemon-bag
+- lemon
+- grapes-bag
+- grapes
+- tomato-bag
+- tomato
+- apple-bag
+- apple
+- chili-bag
+- chili
+nc: 14
+train: train/images
+val: test/images
