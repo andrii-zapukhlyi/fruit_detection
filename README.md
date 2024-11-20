@@ -1,2 +1,1 @@
-# fruit_vegetable_detection
-ML-based fruit and vegetable detection app
+# ML-based fruit and vegetable detection app
