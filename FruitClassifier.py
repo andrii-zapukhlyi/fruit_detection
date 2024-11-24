@@ -1,6 +1,6 @@
 import streamlit as st
-import cv2
 from ultralytics import YOLO
+import cv2
 
 st.set_page_config(layout="wide")
 
