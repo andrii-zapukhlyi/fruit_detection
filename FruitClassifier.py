@@ -1,3 +1,12 @@
+import subprocess
+import sys
+
+def install_package(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+install_package("cv2")
+install_package("ultralytics")
+
 import streamlit as st
 import cv2
 from ultralytics import YOLO
