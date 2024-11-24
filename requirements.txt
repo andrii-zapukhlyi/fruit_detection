@@ -1,3 +1,6 @@
-opencv-python-headless
-ultralytics
 streamlit
+ultralytics
+opencv-python-headless
+torch
+torchvision
+torchaudio
