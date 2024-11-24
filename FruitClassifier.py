@@ -2,6 +2,9 @@ import streamlit as st
 from ultralytics import YOLO
 import cv2
 
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 st.set_page_config(layout="wide")
 
 @st.cache_resource
