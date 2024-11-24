@@ -2,9 +2,6 @@ import streamlit as st
 from ultralytics import YOLO
 import cv2
 
-import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
 st.set_page_config(layout="wide")
 
 @st.cache_resource
@@ -29,37 +26,10 @@ col1, col2 = st.columns([1,2])
 
 with col1:
     st.title("Fruit Classifier")
-    st.write("Upload an image, take a photo, or use live camera feed to classify fruits.")
-    mode = st.radio("Choose mode:", ["Upload Photo", "Take Photo", "Live Camera"], index=0)
+    st.write("Upload an image or take a photo to classify fruits.")
+    mode = st.radio("Choose mode:", ["Upload Photo", "Take Photo"], index=0)
 
 with col2:
-    if mode == "Live Camera":
-        st.write("Turn on your camera for live predictions!")
-        run_camera = st.checkbox("Start Live Camera", key="start_live_camera")
-        
-        if run_camera:
-            cap = cv2.VideoCapture(0)
-            frame_placeholder = st.empty()
-            prediction_text = st.empty()
-
-            while run_camera:
-                ret, frame = cap.read()
-                if not ret:
-                    st.warning("Unable to access the camera.")
-                    break
-
-                predicted_frame, prediction_classes = make_prediction(frame)
-
-                frame_placeholder.image(predicted_frame, channels="RGB", use_column_width=True)
-
-                if len(prediction_classes) == 0:
-                    prediction_text.write("No fruits detected")
-                else:
-                    prediction_text.write(f"Live fruits detected: {', '.join(prediction_classes)}")
-
-            cap.release()
-            cv2.destroyAllWindows()
-
     if mode == "Upload Photo" or mode == "Take Photo":
         if mode == "Upload Photo":
             image = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png", "webp"])
