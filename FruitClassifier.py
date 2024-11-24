@@ -4,7 +4,7 @@ import sys
 def install_package(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
-install_package("cv2")
+install_package("opencv-python")
 install_package("ultralytics")
 
 import streamlit as st
