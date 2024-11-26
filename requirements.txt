@@ -1,6 +1,1 @@
-streamlit
-ultralytics
-opencv-python-headless
-torch
-torchvision
-torchaudio
+
