@@ -27,22 +27,22 @@ col1, col2 = st.columns([1,2])
 with col1:
     st.title("Fruit Classifier")
     st.write("Upload an image, take a photo, or use live camera feed to classify fruits.")
-    mode = st.radio("Choose mode:", ["Upload Photo", "Take Photo", "Live Camera"], index=0)
+    mode = st.radio("Choose mode:", ["Upload Photo", "Take Photo", "Live Camera (only for locally app running)"], index=0)
 
 with col2:
     if mode == "Live Camera":
-        st.write("Turn on your camera for live predictions!")
+        st.write("Live camera working only when running the app locally.")
         run_camera = st.checkbox("Start Live Camera", key="start_live_camera")
         
         if run_camera:
-            cap = cv2.VideoCapture(1)
+            cap = cv2.VideoCapture(0)
             frame_placeholder = st.empty()
             prediction_text = st.empty()
 
             while run_camera:
                 ret, frame = cap.read()
                 if not ret:
-                    st.warning("Unable to access the camera.")
+                    st.warning("Unable to access the camera. Maybe you're trying to access the camera from app deployed on a Streamlit cloud.")
                     break
 
                 predicted_frame, prediction_classes = make_prediction(frame)
