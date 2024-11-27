@@ -1,6 +1,6 @@
 import streamlit as st
 from ultralytics import YOLO
-#import cv2
+import cv2
 
 st.set_page_config(layout="wide")
 
@@ -14,7 +14,7 @@ model = load_model()
 def make_prediction(image):
     prediction = model.predict(image, imgsz=640, verbose=False)
     plotted_img = prediction[0].plot()
-    img_rgb = plotted_img#cv2.cvtColor(plotted_img, cv2.COLOR_BGR2RGB)
+    img_rgb = cv2.cvtColor(plotted_img, cv2.COLOR_BGR2RGB)
     names = model.names
     classes_indices = prediction[0].boxes.cls.cpu().numpy()
     classes = [names[int(cls_idx)] for cls_idx in classes_indices]
