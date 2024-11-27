@@ -27,10 +27,10 @@ col1, col2 = st.columns([1,2])
 with col1:
     st.title("Fruit Classifier")
     st.write("Upload an image, take a photo, or use live camera feed to classify fruits.")
-    mode = st.radio("Choose mode:", ["Upload Photo", "Take Photo", "Live Camera (only for locally app running)"], index=0)
+    mode = st.radio("Choose mode:", ["Upload Photo", "Take Photo", "Live Camera (only for local app running)"], index=0)
 
 with col2:
-    if mode == "Live Camera":
+    if mode == "Live Camera (only for local app running)":
         st.write("Live camera working only when running the app locally.")
         run_camera = st.checkbox("Start Live Camera", key="start_live_camera")
         
