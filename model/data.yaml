@@ -14,5 +14,5 @@ names:
 - chili-bag
 - chili
 nc: 14
-train: /Users/andrik/DATA/Development/ML/DeepLearning/fruits_vegetable_detection/train/images
-val: /Users/andrik/DATA/Development/ML/DeepLearning/fruits_vegetable_detection/test/images
+train: train/images
+val: test/images
