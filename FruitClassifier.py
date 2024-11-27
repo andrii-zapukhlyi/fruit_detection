@@ -35,7 +35,7 @@ with col2:
         run_camera = st.checkbox("Start Live Camera", key="start_live_camera")
         
         if run_camera:
-            cap = cv2.VideoCapture(0)
+            cap = cv2.VideoCapture(1)
             frame_placeholder = st.empty()
             prediction_text = st.empty()
 
