@@ -1,4 +1,7 @@
 # ML-based fruit detection app with Live mode detection
+## Link to the App
+Try the app here: <a href = "https://fruitdetection-yolov8.streamlit.app/">Fruit Detection Streamlit App</a>
+
 ## Live Camera Mode
 To enable live camera mode, you need to clone the repository and run the app locally. Use the following commands in your terminal:
 ```
