@@ -28,6 +28,14 @@ with col1:
     st.title("Fruit Classifier")
     st.write("Upload an image, take a photo, or use live camera feed to classify fruits.")
     mode = st.radio("Choose mode:", ["Upload Photo", "Take Photo", "Live Camera (only for local app running)"], index=0)
+    st.subheader("Fruits the model can classify:")
+    fruits = [
+        "banana-bag", "banana", "blackberries", "raspberry",
+        "lemon-bag", "lemon", "grapes-bag", "grapes",
+        "tomato-bag", "tomato", "apple-bag", "apple",
+        "chili-bag", "chili"
+    ]
+    st.write("\n".join([f"- {fruit}" for fruit in fruits]))
 
 with col2:
     if mode == "Live Camera (only for local app running)":
