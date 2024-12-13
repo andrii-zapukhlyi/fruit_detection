@@ -55,7 +55,7 @@ with col2:
 
                 predicted_frame, prediction_classes = make_prediction(frame)
 
-                frame_placeholder.image(predicted_frame, channels="RGB", use_column_width=True)
+                frame_placeholder.image(predicted_frame, channels="RGB", use_container_width=True)
 
                 if len(prediction_classes) == 0:
                     prediction_text.write("No fruits detected")
@@ -75,7 +75,7 @@ with col2:
             with open("temp_image.jpg", "wb") as f:
                 f.write(image.getbuffer())
             predicted_image, prediction_classes = make_prediction("temp_image.jpg")
-            st.image(predicted_image, caption="Prediction Result", use_column_width=True)
+            st.image(predicted_image, caption="Prediction Result", use_container_width=True)
             st.write("Detected fruits:")
             if len(prediction_classes) == 0:
                 st.write("No fruits detected")
