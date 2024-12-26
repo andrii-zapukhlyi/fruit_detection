@@ -34,6 +34,7 @@ The dataset includes over 4,500 images across 14 classes of fruits and vegetable
 - Apple
 - Chili-bag
 - Chili
+- 
 Bag classes represent fruits in plastic bags without labels.
 
 ## Solution
@@ -44,6 +45,7 @@ The YOLOv8l model achieved impressive results:
 - mAP50: 0.99
 - mAP50-95: 0.97
 - F1 Score: 0.99
+- 
 The model demonstrates high accuracy even when applied to real-life photos, making it practical for real-world scenarios.
 
 ## Conclusion
